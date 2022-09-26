@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+   <canvas id="horca" width="1200px" height="580px" style="background:rgb(203, 216, 158)"></canvas>
+    
+
+    <script>
+       
+       var pantalla = document.querySelector("canvas");
+       var lapiz = pantalla.getContext("2d");
+       var letra = "";
+       window.onkeypress= teclaApretada;
+       var x = 540;
+
+       function teclaApretada(evento){
+            letra = evento.key;  
+            //alert("se apreto la tecla: " + letra);
+            console.log(isNaN(letra));
+            if(!isNaN(letra)){
+                alert("Ingrese una letra");
+            letra = "";
+            }
+            dibujarLetraCorrecta(letra,x);
+            
+        } 
+       
+       function dibujarGuion(){
+            lapiz.fillStyle = "#000";
+            lapiz.beginPath();
+            lapiz.moveTo(500,400);
+            lapiz.lineTo(520,400);
+            lapiz.lineWidth = 3;
+            lapiz.stroke();		
+        }
+
+        function dibujarLetraCorrecta(letra,x){
+            console.log(letra);
+            lapiz.beginPath();
+            lapiz.fillStyle = "blue";
+            lapiz.font = "bold 30px arial";
+            lapiz.fillText(letra,x,390);
+        }
+
+        dibujarGuion();
+        
+       
+       /*
+       
+       const palabrasecreta = ["puma","conejo","tortuga","pajarito","cerdo","vaca","cordero","gato","perro","gallina"];      
+       
+        function sortearPalabra(){
+	    const pospalabra = Math.floor(Math.random()*palabrasecreta.length);
+        document.write(pospalabra);
+        return palabraSorteada = palabrasecreta[pospalabra];
+        }
+
+        sortearPalabra();
+        contarLetras(palabraSorteada);
+        document.write("<br>" + palabraSorteada);
+        document.write("<br>" + numletras);
+
+        function contarLetras(palabra){
+            return numletras = palabra.length;
+        } */
+
+    </script>
+    
+    
+</body>
+</html>

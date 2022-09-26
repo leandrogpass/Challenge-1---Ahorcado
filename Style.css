@@ -1,0 +1,89 @@
+body{
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	background:#ffdead;
+	font-family: 'Oswald', sans-serif;
+}
+header{
+	position:relative;
+	top: 0px;
+	left: 0px;
+	height: 10%;
+}
+main{
+	width: 100vw;
+	height: 80vh;
+	text-align: center;
+}
+.logo-alura{
+	position: absolute;
+	left: 40px;
+	top: 20px;	
+}
+.btn-iniciar{
+	width: 317px;
+	height: 100px;
+	text-align: center;
+	margin-top: 140px;
+	margin-bottom: 20px;
+	background: #b90606;
+	border:2px solid #000;
+	border-radius: 20px;
+	font-size: 2em;
+	color: #fff;
+	cursor: pointer;
+}
+.btn-iniciar:hover{
+	transform: scaleX(1.1);
+	background:  #f70808;
+}
+.btn-nuevapalabra{
+	width: 280px;
+	height: 67px;
+	text-align: center;
+	background:#f7ffbf;
+	border:2px solid #000;
+	border-radius: 20px;
+	font-size: 1.2em;
+	cursor: pointer;
+}
+.btn-nuevapalabra:hover{
+	transform: scaleX(1.1);
+	background: #efff80;
+}
+
+canvas{
+	display: none;
+	position: absolute;
+	top: 40px;
+	left: 12%;
+	background: rgb(171, 168, 168);
+}
+	
+
+footer{
+	position: absolute;
+	width: 100vw;
+	height: 80px;
+	bottom: 0px;
+	background:#f08080;
+	text-align: center;
+}
+.logo-iep{
+	height: 40%;
+	margin: 10px auto 5px;
+}
+.autor{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 70%;
+	margin: auto;
+}
+
+.autor p{
+	display: inline-block;
+	font-family: 'Oxygen', sans-serif;
+}
+
