@@ -16,13 +16,28 @@
 		</header>
 
 		<main>
-			<input type="boton" class="btn-iniciar" value="Iniciar juego" id="iniciar-juego" onclick="iniciarJuego()">
+			<input type="button" class="btn-iniciar" value="Iniciar juego" id="iniciar-juego" onclick="iniciarJuego()">
 			<br>
-			<input type="boton" class="btn-nuevapalabra" value="Agregar nueva palabra" id="crear-palabra">
+			<input type="button" class="btn-nuevapalabra" value="Agregar nueva palabra" id="crear-palabra" onclick="ingresarPalabra()">
+			<br>
+			<div class="botones" id="botones">
+				<input type="button" class="btn" value="Nuevo juego" id="nuevo-juego" onclick="iniciarJuego()">
+				<input type="button" class="btn" value="Desistir" id="desistir" onclick="desistir()">
+			</div>
+			<div class="palabra-nueva" id="palabranueva">
+				<label for="palabra-ingresada" class="label">Ingrese una palabra</label>
+				<input type="text" id="nuevapalabra" maxlength="10" autofocus required>
+			</div>
+			<div class="botones" id="botones1">
+				<input type="button" class="btn" value="Guardar y empezar" id="guardar-empezar" onclick="guardarEmpezar()">
+				<input type="button" class="btn" value="Cancelar" id="cancelar" onclick="desistir()" >
+			</div>	
+			
+
 			
 		</main>
 
-		<canvas id="horca" width="1200px" height="580px"></canvas>
+		<canvas id="horca" width="1200px" height="480px"></canvas>
 
 		<footer>
 			<img src="Imagenes/logo software.png" class="logo-iep" alt="logo iep">

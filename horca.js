@@ -1,6 +1,6 @@
 const palabrasecreta = ["PUMA","CONEJO","TORTUGA","PAJARITO","CERDO","vaca","CORDERO","GATO","PERRO","GALLINA"];      
 var palabraenjuego="";
-var palabrasorteada="";
+var numletras = 0;
 var letra = "";
 var posi = 500;
 var cuerpo = 1;
@@ -10,11 +10,28 @@ window.onkeypress= teclaApretada;
 
 function sortearPalabra(){
 	const pospalabra = Math.floor(Math.random()*palabrasecreta.length);
-	return palabrasorteada = (palabrasecreta[pospalabra]).toUpperCase();
+	return palabraenjuego = (palabrasecreta[pospalabra]).toUpperCase();
 }
 
 function contarLetras(palabra){
 	return numletras = palabra.length;
+}
+
+// Ingresar nueva palabra
+
+function ingresarPalabra(){
+	document.getElementById("iniciar-juego").style.display = "none";
+	document.getElementById("crear-palabra").style.display = "none";
+	document.getElementById("botones1").style.visibility = "visible";
+	document.getElementById("palabranueva").style.display = "block";
+}
+
+function guardarEmpezar(){
+	let nuevapalabra = document.getElementById("nuevapalabra");
+	palabrasecreta.push(nuevapalabra.value);
+	palabraenjuego = (nuevapalabra.value).toUpperCase();
+	document.getElementById("nuevapalabra").value = "";
+	jugar(palabraenjuego);
 }
 
 // Dibujar guiones de la palabra y horca
@@ -57,13 +74,13 @@ function teclaApretada(evento){
 	letra = "";
 	return;
 	}
-	chequearLetra(letra,palabrasorteada);
+	chequearLetra(letra,palabraenjuego);
 } 
 
 // chekear que la letra ingresada está en la palabra y condición del juego.
 
 function chequearLetra(letra,palabra){
-	var posc=500;
+	var posc=510;
 	letracorrecta=false;
 	for(var i=0; i < palabra.length; i++){
 		if(letra == palabra.charAt(i)){
@@ -95,6 +112,7 @@ function dibujarLetraCorrecta(letra,x){
 	lapiz.beginPath();
 	lapiz.fillStyle = "blue";
 	lapiz.font = "bold 30px arial";
+	lapiz.textAlign = "center";
 	lapiz.fillText(letra,x,390);
 	contl+=1;
 }
@@ -105,6 +123,7 @@ function dibujarLetraIncorrecta(letra,x){
 	lapiz.beginPath();
 	lapiz.fillStyle = "#700";
 	lapiz.font = "bold 20px arial";
+	lapiz.textAlign = "center";
 	lapiz.fillText(letra,x,450);
 }
 
@@ -149,24 +168,52 @@ function dibujarCuerpo(xi,yi,xf,yf){
 			lapiz.beginPath();
 			lapiz.fillStyle = "red";
 			lapiz.font = "bold 20px arial";
-			lapiz.fillText("FIN DEL JUEGO",750,140);	
+			lapiz.fillText("¡PERDISTE!",780,140);	
 		} else {
 			lapiz.beginPath();
 			lapiz.fillStyle = "green";
 			lapiz.font = "bold 20px arial";
-			lapiz.fillText("Ganaste ¡FELICIDADES!",750,140);
+			lapiz.textAlign = "center";
+			lapiz.fillText("Ganaste",780,140);
+			lapiz.fillText("¡FELICIDADES!",780,160);
 		}
 	}
+
+// desistir del juego
+
+function desistir(){
+	document.getElementById("iniciar-juego").style.display = "inline-block";
+	document.getElementById("crear-palabra").style.display = "inline-block";
+	document.getElementById("horca").style.display = "none";
+	document.getElementById("botones").style.visibility = "hidden";
+	document.getElementById("palabranueva").style.display = "none";
+	document.getElementById("nuevapalabra").value = "";
+}
+
 // inicio del juego
 
-function iniciarJuego() {
+function iniciarJuego(){
+	sortearPalabra();
+	jugar(palabraenjuego);
+}
+
+function jugar(palabraenjuego){
 	document.getElementById("iniciar-juego").style.display = "none";
 	document.getElementById("crear-palabra").style.display = "none";
 	document.getElementById("horca").style.display = "block";
-	sortearPalabra();
-	console.log(palabrasorteada);
-	contarLetras(palabrasorteada);
-	dibujarHorca();
-	dibujarGuiones(numletras);
+	document.getElementById("botones").style.visibility = "visible";
+	document.getElementById("botones1").style.visibility = "hidden";
+	document.getElementById("palabranueva").style.display = "none";
+
+	lapiz.clearRect(0,0,1200,480);
+	posi = 500;
+	cuerpo = 1;
+	gano = true;
+	contl = 0;
+	console.log(palabraenjuego);
 	
+	dibujarHorca();
+	contarLetras(palabraenjuego);
+	dibujarGuiones(numletras);
 }
+

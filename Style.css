@@ -5,22 +5,26 @@ body{
 	background:#ffdead;
 	font-family: 'Oswald', sans-serif;
 }
+
 header{
 	position:relative;
 	top: 0px;
 	left: 0px;
 	height: 10%;
 }
+
 main{
 	width: 100vw;
 	height: 80vh;
 	text-align: center;
 }
+
 .logo-alura{
 	position: absolute;
 	left: 40px;
 	top: 20px;	
 }
+
 .btn-iniciar{
 	width: 317px;
 	height: 100px;
@@ -34,10 +38,12 @@ main{
 	color: #fff;
 	cursor: pointer;
 }
+
 .btn-iniciar:hover{
 	transform: scaleX(1.1);
 	background:  #f70808;
 }
+
 .btn-nuevapalabra{
 	width: 280px;
 	height: 67px;
@@ -53,14 +59,62 @@ main{
 	background: #efff80;
 }
 
+.palabra-nueva{
+	text-align: center;
+	margin-top: 100px;
+	display: none;
+}
+
+.label{
+	display: block;
+	font: 30px 'Oxygen', sans-serif;
+	font-weight: 700;
+	margin-bottom: 20px;
+}
+
+.palabra-nueva input{
+	width: 400px;
+	height: 80px;
+	font-size: 3em;
+	text-align: center;
+	border: 0;
+	outline: none;
+	background: #d0db88;
+}
+
+.botones{
+	visibility: hidden;
+	position: absolute;
+	bottom: 130px;
+	left: 28%;
+	display: inline-block;
+	width: 700px;
+	height: 60px;
+}
+
+.btn{
+	width: 300px;
+	height: 50px;
+	text-align: center;
+	background:#f7ffbf;
+	border:2px solid #000;
+	border-radius: 20px;
+	font-size: 1.2em;
+	margin: 0 10px;
+	cursor: pointer;
+}
+
+.btn:hover{
+	transform: scaleX(1.1);
+	background: #efff80;
+}
+
 canvas{
 	display: none;
 	position: absolute;
 	top: 40px;
 	left: 12%;
-	/*background: rgb(171, 168, 168); */
 }
-	
 
 footer{
 	position: absolute;
@@ -70,10 +124,12 @@ footer{
 	background:#f08080;
 	text-align: center;
 }
+
 .logo-iep{
 	height: 40%;
 	margin: 10px auto 5px;
 }
+
 .autor{
 	display: flex;
 	flex-direction: row;
