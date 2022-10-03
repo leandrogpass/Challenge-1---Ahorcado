@@ -2,7 +2,7 @@ const palabrasecreta = ["PUMA","CONEJO","TORTUGA","PAJARITO","CERDO","vaca","COR
 var palabraenjuego="";
 var numletras = 0;
 var letra = "";
-var posi = 500;
+var posi = 100;
 var cuerpo = 1;
 var gano = true;
 var contl = 0;
@@ -41,10 +41,10 @@ var lapiz = pantalla.getContext("2d");
 
 function dibujarHorca(){
 	lapiz.fillStyle = "#7B241C";
-	lapiz.fillRect(490,320,220,20);
-	lapiz.fillRect(530,50,15,270);
-	lapiz.fillRect(540,50,120,15);
-	lapiz.fillRect(650,50,10,50);
+	lapiz.fillRect(90,320,220,20);
+	lapiz.fillRect(130,50,15,270);
+	lapiz.fillRect(140,50,120,15);
+	lapiz.fillRect(250,50,10,50);
 }
 
 function dibujarGuion(x){
@@ -57,7 +57,7 @@ function dibujarGuion(x){
 }
 
 function dibujarGuiones(nletras){
-	var xini=500
+	var xini=100
 	for (var i=0; i < nletras; i++){
 		dibujarGuion(xini);
 		xini+=30;
@@ -80,7 +80,7 @@ function teclaApretada(evento){
 // chekear que la letra ingresada está en la palabra y condición del juego.
 
 function chequearLetra(letra,palabra){
-	var posc=510;
+	var posc=110;
 	letracorrecta=false;
 	for(var i=0; i < palabra.length; i++){
 		if(letra == palabra.charAt(i)){
@@ -133,23 +133,23 @@ function dibujarAhorcado(cuerpo){
 	switch(cuerpo){
 		case 1: dibujarCabeza(); // cabeza
 		break;
-		case 2: dibujarCuerpo(655,146,655,226); //tronco
+		case 2: dibujarCuerpo(255,146,255,226); //tronco
 		break;
-		case 3: dibujarCuerpo(655,146,710,200); // brazo izq
+		case 3: dibujarCuerpo(255,146,310,200); // brazo izq
 		break;
-		case 4: dibujarCuerpo(655,146,600,200); // brazo der
+		case 4: dibujarCuerpo(255,146,200,200); // brazo der
 		break;
-		case 5: dibujarCuerpo(655,226,710,280); // pierna izq
+		case 5: dibujarCuerpo(255,226,310,280); // pierna izq
 		break;
-		case 6: dibujarCuerpo(655,226,600,280); // pierna der
+		case 6: dibujarCuerpo(255,226,200,280); // pierna der
 		break;
 	}
 }
 
 function dibujarCabeza(){
 	lapiz.fillStyle = "#000"; //cabeza
-	lapiz.moveTo(677,122);
-	lapiz.arc(655,122,24,0,Math.PI*2);
+	lapiz.moveTo(277,122);
+	lapiz.arc(255,122,24,0,Math.PI*2);
 	lapiz.lineWidth = 5;
 	lapiz.stroke();
 }
@@ -168,14 +168,14 @@ function dibujarCuerpo(xi,yi,xf,yf){
 			lapiz.beginPath();
 			lapiz.fillStyle = "red";
 			lapiz.font = "bold 20px arial";
-			lapiz.fillText("¡PERDISTE!",780,140);	
+			lapiz.fillText("¡PERDISTE!",380,140);	
 		} else {
 			lapiz.beginPath();
 			lapiz.fillStyle = "green";
 			lapiz.font = "bold 20px arial";
 			lapiz.textAlign = "center";
-			lapiz.fillText("Ganaste",780,140);
-			lapiz.fillText("¡FELICIDADES!",780,160);
+			lapiz.fillText("Ganaste",380,140);
+			lapiz.fillText("¡FELICIDADES!",380,160);
 		}
 	}
 
@@ -206,7 +206,7 @@ function jugar(palabraenjuego){
 	document.getElementById("palabranueva").style.display = "none";
 
 	lapiz.clearRect(0,0,1200,480);
-	posi = 500;
+	posi = 100;
 	cuerpo = 1;
 	gano = true;
 	contl = 0;

@@ -109,12 +109,13 @@ main{
 	background: #efff80;
 }
 
+
 canvas{
 	display: none;
 	position: absolute;
 	top: 40px;
-	left: 12%;	
-	background: rgb(198, 191, 191);
+	left: 35%;	
+	
 }
 
 footer{
@@ -162,20 +163,20 @@ footer{
 		left: 15%;
 		
 	}
-	
 	.btn{
 		margin: 5px;
 		display: block;
 	}
-	
+
 	canvas{
-		
-		display: none;
-		position: absolute;
-		top: 40px;
-		left: 5%;	
-		background: rgb(198, 191, 191);
+		width: 70%;
+		height: 52%;
+		left: 15%;
+		top: 60px;
 	}
+
+	
+
 	
 }
 
