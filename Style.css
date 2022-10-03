@@ -113,7 +113,8 @@ canvas{
 	display: none;
 	position: absolute;
 	top: 40px;
-	left: 12%;
+	left: 12%;	
+	background: rgb(198, 191, 191);
 }
 
 footer{
@@ -141,5 +142,40 @@ footer{
 .autor p{
 	display: inline-block;
 	font-family: 'Oxygen', sans-serif;
+}
+
+@media screen and (max-width: 480px){
+
+	footer {
+		height: 150px;
+	}
+	.autor{
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	.autor p{
+		padding-bottom: 5px;
+	}
+	.botones{
+		width: 100vw;
+		height: 140px;
+		left: 15%;
+		
+	}
+	
+	.btn{
+		margin: 5px;
+		display: block;
+	}
+	
+	canvas{
+		
+		display: none;
+		position: absolute;
+		top: 40px;
+		left: 5%;	
+		background: rgb(198, 191, 191);
+	}
+	
 }
 
